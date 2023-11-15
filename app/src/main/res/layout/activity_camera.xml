@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CameraActivity">
+
+    <Button
+        android:id="@+id/btnSelectimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="184dp"
+        android:text="이미지 선택"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSendtoserver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivUserimage" />
+
+    <Button
+        android:id="@+id/btnSendtoserver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="184dp"
+        android:text="이미지 전송"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnSelectimage"
+        app:layout_constraintTop_toBottomOf="@+id/tvTestuserfilename" />
+
+    <ImageView
+        android:id="@+id/ivUserimage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="204dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSelectimage"
+        app:layout_constraintEnd_toStartOf="@+id/ivTestimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <ImageView
+        android:id="@+id/ivTestimage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTestuserfilename"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivUserimage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+    <TextView
+        android:id="@+id/tvTestuserfilename"
+        android:layout_width="126dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="62dp"
+        android:text="파일이름"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/btnSendtoserver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivTestimage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
