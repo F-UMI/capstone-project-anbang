@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // AsyncTask 실행
-//        new DownloadImageTask().execute();
+
+        new DownloadImageTask().execute();
     }
 
     // AsyncTask 클래스 정의
@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Bitmap doInBackground(Void... voids) {
             // S3에서 이미지 다운로드
-            AmazonS3Client s3Client = new AmazonS3Client(new BasicAWSCredentials("액세스", "시크릿"));
-            S3Object s3Object = s3Client.getObject("버킷", "test1/KakaoTalk_20230825_021231523_01.jpg");
+            AmazonS3Client s3Client = new AmazonS3Client(new BasicAWSCredentials(BuildConfig.ACCESS_KEY, BuildConfig.SECRET_ACCESS_KEY));
+            S3Object s3Object = s3Client.getObject(BuildConfig.BUCKET_NAME, "test1/KakaoTalk_20230825_021231523_01.jpg");
 
             // InputStream에서 비트맵으로 변환
             try (InputStream inputStream = s3Object.getObjectContent()) {

@@ -2,6 +2,9 @@ plugins {
     id 'com.android.application'
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
     namespace 'com.example.myapplication'
     compileSdk 33
@@ -14,7 +17,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "ACCESS_KEY", properties['access.key']
+        buildConfigField "String", "SECRET_ACCESS_KEY", properties['secret.access.key']
+        buildConfigField "String", "BUCKET_NAME", properties['bucket.name']
     }
+
 
     buildTypes {
         release {
@@ -26,7 +34,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
+
 
 dependencies {
     implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.13.5'

@@ -149,13 +149,13 @@ public class CameraActivity extends AppCompatActivity {
     public void uploadWithTransferUtilty(String fileName, File file) {
 
         AWSCredentials awsCredentials = new BasicAWSCredentials(
-                "액세스", "시크릿");
+                BuildConfig.ACCESS_KEY, BuildConfig.SECRET_ACCESS_KEY);
         AmazonS3Client s3Client = new AmazonS3Client(awsCredentials, Region.getRegion(Regions.AP_NORTHEAST_2));
 
         TransferUtility transferUtility = TransferUtility.builder().s3Client(s3Client).context(this).build();
         TransferNetworkLossHandler.getInstance(this);
 
-        TransferObserver uploadObserver = transferUtility.upload("버킷 이름", fileName, file);
+        TransferObserver uploadObserver = transferUtility.upload(BuildConfig.BUCKET_NAME, fileName, file);
 
         uploadObserver.setTransferListener(new TransferListener() {
             @Override
