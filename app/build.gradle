@@ -21,6 +21,7 @@ android {
         buildConfigField "String", "ACCESS_KEY", properties['access.key']
         buildConfigField "String", "SECRET_ACCESS_KEY", properties['secret.access.key']
         buildConfigField "String", "BUCKET_NAME", properties['bucket.name']
+        buildConfigField "String", "IDENTITY_POOL_ID", properties['identity.pool.id']
     }
 
 
