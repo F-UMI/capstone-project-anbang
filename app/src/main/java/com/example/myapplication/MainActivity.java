@@ -12,13 +12,35 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferNetworkLossHandler;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+
 
 public class MainActivity extends AppCompatActivity {
+    /*
+    private ImageView imageView;
+    private S3Manager s3Manager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        TransferNetworkLossHandler.getInstance(getApplicationContext());
+        setContentView(R.layout.activity_test);
+
+        imageView = findViewById(R.id.imageView);
+        s3Manager = new S3Manager(this);
+        s3Manager.downloadAndDisplayImagesInFolder("anbang-bucket-01", "test2/", imageView);
+    }
+}
+*/
 
     private ImageView imageView;
     private Button button;
@@ -38,8 +60,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        new DownloadImageTask().execute();
+ new DownloadImageTask().execute();
+
     }
+
+
 
     // AsyncTask 클래스 정의
     private class DownloadImageTask extends AsyncTask<Void, Void, Bitmap> {
