@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".S3Activity">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -13,18 +13,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"/>
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/textView"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:padding="10dp"/>
 
-        <LinearLayout
-            android:id="@+id/containerLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-        </LinearLayout>
-    </ScrollView>
 </RelativeLayout>

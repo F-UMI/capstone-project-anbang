@@ -1,9 +1,11 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -11,8 +13,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
@@ -46,15 +53,43 @@ import java.util.stream.Collectors;
 
 
 public class MainActivity extends AppCompatActivity {
+    private static final int REQUEST_WRITE_EXTERNAL_STORAGE = 1;
 
     private AmazonS3 s3Client;
     private TransferUtility transferUtility;
+
+    private TextView textView;
+    private RecyclerView recyclerView;
+    private ImageAdapter imageAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
+        textView = findViewById(R.id.textView);
+        recyclerView = findViewById(R.id.recyclerView);
+
+        // Check for write external storage permission
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        REQUEST_WRITE_EXTERNAL_STORAGE);
+            } else {
+                initializeS3Client();
+                // Retrieve and display images
+                new ListObjectsTask().execute();
+            }
+        } else {
+            initializeS3Client();
+            // Retrieve and display images
+            new ListObjectsTask().execute();
+        }
+    }
+
+    private void initializeS3Client() {
         // Initialize AWS credentials and S3 client
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
                 getApplicationContext(),
@@ -73,9 +108,21 @@ public class MainActivity extends AppCompatActivity {
 
         // Start the TransferService
         getApplicationContext().startService(new Intent(getApplicationContext(), TransferService.class));
+    }
 
-        // Retrieve and display objects
-        new ListObjectsTask().execute();
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_WRITE_EXTERNAL_STORAGE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                initializeS3Client();
+                // Retrieve and display images
+                new ListObjectsTask().execute();
+            } else {
+                // Handle permission denied
+                // You might want to inform the user or take appropriate action
+            }
+        }
     }
 
     private class ListObjectsTask extends AsyncTask<Void, Void, List<String>> {
@@ -96,59 +143,54 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<String> objectKeys) {
-            LinearLayout containerLayout = findViewById(R.id.containerLayout);
+            textView.setText("S3 Object Display");
 
-            for (String key : objectKeys) {
-                Log.d("S3Activity", "Object key: " + key);
+            // Set up RecyclerView and ImageAdapter
+            imageAdapter = new ImageAdapter(objectKeys, MainActivity.this);
+            recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+            recyclerView.setAdapter(imageAdapter);
 
-                // Load and display the object content
+            // Download images and notify the adapter
+            for (String objectKey : objectKeys) {
+                File destinationDirectory = new File(getExternalFilesDir(null) + File.separator + "test2/");
+                Log.d("Directory", "Destination Directory: " + destinationDirectory.getAbsolutePath());
+
+                if (!destinationDirectory.exists()) {
+                    if (!destinationDirectory.mkdirs()) {
+                        Log.e("Directory", "Failed to create destination directory");
+                        return;
+                    }
+                }
                 TransferObserver observer = transferUtility.download(
                         BuildConfig.BUCKET_NAME,
-                        key,
-                        new File(getExternalFilesDir(null), key)
+                        objectKey,
+                        new File(destinationDirectory, objectKey)
                 );
 
                 observer.setTransferListener(new TransferListener() {
                     @Override
                     public void onStateChanged(int id, TransferState state) {
                         if (state == TransferState.COMPLETED) {
-                            try {
-                                File file = new File(getExternalFilesDir(null), key);
-                                BufferedReader reader = new BufferedReader(new FileReader(file));
-                                String line;
-                                StringBuilder content = new StringBuilder();
-                                while ((line = reader.readLine()) != null) {
-                                    content.append(line);
-                                }
-                                reader.close();
-
-                                // Display object key and content in a TextView
-                                TextView textView = new TextView(MainActivity.this);
-                                textView.setText("Object key: " + key + "\nObject content: " + content.toString());
-                                containerLayout.addView(textView);
-
-                                file.delete(); // Delete the local file after reading its content
-                            } catch (IOException e) {
-                                Log.e("S3Activity", "Error loading object content", e);
-                            }
+                            runOnUiThread(() -> imageAdapter.notifyDataSetChanged());
                         }
                     }
 
                     @Override
                     public void onProgressChanged(int id, long bytesCurrent, long bytesTotal) {
-                        // Do something with progress if needed
+
                     }
 
                     @Override
                     public void onError(int id, Exception ex) {
-                        Log.e("S3Activity", "Error downloading object", ex);
+
                     }
+
+                    // ... (other methods remain the same)
                 });
             }
         }
     }
 }
-
     /*
     private ImageView imageView;
     private S3Manager s3Manager;
