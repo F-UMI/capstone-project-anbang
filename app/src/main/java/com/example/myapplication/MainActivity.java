@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
             textView.setText("S3 Object Display");
 
             // Set up RecyclerView and ImageAdapter
-            imageAdapter = new ImageAdapter(objectKeys, MainActivity.this);
+//            imageAdapter = new ImageAdapter(objectKeys, MainActivity.this);
             recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
             recyclerView.setAdapter(imageAdapter);
 
