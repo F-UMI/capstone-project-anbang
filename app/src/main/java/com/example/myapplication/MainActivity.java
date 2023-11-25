@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.CognitoCachingCredentialsProvider;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.S3Object;
 
@@ -32,17 +34,21 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         button = (Button) findViewById(R.id.button);
 
+        CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
+                getApplicationContext(),
+                "ap-northeast-2:1601b465-7ffb-4249-8a7f-5b4437df9462",  // Replace with your Cognito identity pool ID
+                Regions.AP_NORTHEAST_2  // Replace with the appropriate AWS region
+        );
+
         button.setOnClickListener(view -> {
             // 버튼 클릭 시 다른 액티비티로 전환
             Intent intent = new Intent(MainActivity.this, CameraActivity.class);
             startActivity(intent);
         });
 
-
         new DownloadImageTask().execute();
 
     }
-
 
 
     // AsyncTask 클래스 정의
@@ -73,4 +79,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
 }
