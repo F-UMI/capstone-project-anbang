@@ -17,6 +17,7 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 import java.util.ArrayList;
 import java.util.List;
 
+// S3에서 Image를 가져와 리사이클러뷰에 등록
 public class S3ImageActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
