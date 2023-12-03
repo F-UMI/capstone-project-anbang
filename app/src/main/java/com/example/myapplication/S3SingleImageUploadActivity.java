@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-public class MainActivity extends AppCompatActivity {
+public class S3SingleImageUploadActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private Button button;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         button.setOnClickListener(view -> {
             // 버튼 클릭 시 다른 액티비티로 전환
-            Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+            Intent intent = new Intent(S3SingleImageUploadActivity.this, CameraActivity.class);
             startActivity(intent);
         });
 
