@@ -1,32 +1,15 @@
 package com.example.myapplication;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.example.myapplication.database.PropertyDB;
 import com.example.myapplication.dto.PropertyDto;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class PropertyEditActivity extends AppCompatActivity {
@@ -51,10 +34,10 @@ public class PropertyEditActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_property);
+        setContentView(R.layout.activity_property_edit);
         propertyDB = PropertyDB.getInstance(this);
-        propertyDtoList = propertyDB.boardDao().getAll();
-//
+        propertyDtoList = propertyDB.propertyDao().getAll();
+/*//
         propertyAdapter = new PropertyAdapter(this, propertyDtoList);
 
         editBoardTitle = findViewById(R.id.editBoardTitle);
@@ -91,7 +74,7 @@ public class PropertyEditActivity extends AppCompatActivity {
                 String date = String.valueOf(LocalDateTime.now(ZoneId.of("Asia/Seoul")).format(DateTimeFormatter.ofPattern("MM월 dd일 HH시 mm분")));
                 PropertyDto propertyDto = new PropertyDto(propertyDtoList.get(position).getId(), password, title, userName, text, date, imagePath);
                 Log.e("editID", propertyDtoList.get(position).getId().toString());
-                propertyDB.boardDao().update(propertyDto);
+                propertyDB.propertyDao().update(propertyDto);
                 propertyAdapter.notifyDataSetChanged();
             }).start();
 
@@ -177,6 +160,6 @@ public class PropertyEditActivity extends AppCompatActivity {
     public Bitmap byteArrayToBitmap(byte[] byteArray) {
         Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         return bitmap;
+    }*/
     }
-
 }

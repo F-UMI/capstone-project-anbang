@@ -14,7 +14,7 @@ import com.example.myapplication.dto.PropertyDto;
 @Database(entities = {PropertyDto.class}, version = 1)
 @TypeConverters({LocalDateTimeConverter.class})
 public abstract class PropertyDB extends RoomDatabase {
-    public abstract PropertyDao boardDao();
+    public abstract PropertyDao propertyDao();
 
     private static PropertyDB INSTANCE;
 

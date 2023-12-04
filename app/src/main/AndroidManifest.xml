@@ -23,7 +23,7 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="33">
         <activity
-            android:name=".S3ImageUploadActivity"
+            android:name=".PropertyListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,6 +38,8 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity android:name=".S3ImageActivity" />
         <activity android:name=".S3SingleImageUploadActivity" />
+        <activity android:name=".PropertyAddActivity" />
+        <activity android:name=".PropertyViewActivity" />
         <service
             android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
             android:enabled="true" />

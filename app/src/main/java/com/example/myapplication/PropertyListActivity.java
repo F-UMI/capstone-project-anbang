@@ -33,7 +33,7 @@ public class PropertyListActivity extends AppCompatActivity {
         mAddBtn = findViewById(R.id.writingBtn);
         Runnable r = () -> {
             try {
-                propertyDtoList = propertyDB.boardDao().getAll();
+                propertyDtoList = propertyDB.propertyDao().getAll();
                 mAdapter = new PropertyAdapter(PropertyListActivity.this, propertyDtoList);
                 mAdapter.notifyDataSetChanged();
                 mRecyclerView.setAdapter(mAdapter);

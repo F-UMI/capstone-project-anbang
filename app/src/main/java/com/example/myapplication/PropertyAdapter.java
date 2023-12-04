@@ -57,7 +57,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Holder
                 if (position != RecyclerView.NO_POSITION) {
                     Intent intent = new Intent(context, PropertyViewActivity.class);
                     intent.putExtra("propertyId", propertyDtoList.get(position).getPropertyId());
-                    intent.putExtra("propertyName", propertyDtoList.get(position).getBargainerName());
+                    intent.putExtra("propertyName", propertyDtoList.get(position).getPropertyName());
                     intent.putExtra("bargainerName", propertyDtoList.get(position).getBargainerName());
                     intent.putExtra("listingCreationDate", propertyDtoList.get(position).getListingCreationDate());
                     intent.putExtra("propertyType", propertyDtoList.get(position).getPropertyType());
