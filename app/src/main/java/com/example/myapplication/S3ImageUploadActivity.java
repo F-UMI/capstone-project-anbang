@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -27,8 +26,6 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class S3ImageUploadActivity extends AppCompatActivity {
 
@@ -131,7 +128,7 @@ public class S3ImageUploadActivity extends AppCompatActivity {
                 File file = new File(filePath);
 
                 // Specify the destination folder and file name in the S3 bucket
-                String folderName = "test2";
+                String folderName = "test3";
                 String fileName = file.getName();
                 String s3ObjectKey = folderName + "/" + fileName;
 

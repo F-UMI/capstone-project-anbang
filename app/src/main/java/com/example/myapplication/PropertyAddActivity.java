@@ -230,7 +230,7 @@ public class PropertyAddActivity extends AppCompatActivity {
                 File file = new File(filePath);
 
                 // Specify the destination folder and file name in the S3 bucket
-                String folderName = "test2";
+                String folderName = "test3";
                 String fileName = file.getName();
                 String s3ObjectKey = folderName + "/" + fileName;
 
