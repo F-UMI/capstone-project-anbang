@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateAccountActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="100dp"
+        android:paddingBottom="100dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:textColor="#66008C"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="30dp"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
+                    android:inputType="text"
+                    android:hint="이름"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:textSize="20dp"
+                    android:inputType="text"
+                    android:hint="아이디(이메일)"/>
+
+<!--                <android.widget.Button
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="확인"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button2" />-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:textSize="20dp"
+                    android:inputType="textPassword"
+                    android:hint="비밀번호"/>
+
+<!--                <EditText
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:textSize="20dp"
+                android:hint="비밀번호 확인"/>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:textSize="20dp"
+                    android:inputType="date"
+                    android:hint="생년월일"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:textSize="20dp"
+                    android:inputType="phone"
+                    android:hint="전화번호"/>
+
+<!--                <android.widget.Button
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="확인"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button2" />-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <android.widget.Button
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="가입"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button2" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <android.widget.Button
+                    android:id="@+id/Back_login"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="로그인"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button2" />
+
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

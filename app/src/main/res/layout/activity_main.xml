@@ -5,14 +5,129 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <LinearLayout
+        android:id="@+id/main1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/icon"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+
+            <ImageButton
+                android:id="@+id/profile1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:src="@drawable/person_outline"
+                android:scaleType="fitCenter"
+                android:padding="15dp"/>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search1"
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:padding="20dp"
+                app:queryHint="검색"/>
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <android.widget.Button
+                android:id="@+id/buying1"
+                android:layout_width="180dp"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"
+                android:text="원룸"
+                android:textAlignment="viewStart"
+                android:textSize="25sp"
+                android:textColor="#000000"
+                android:background="@drawable/button"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.widget.Button
+                    android:id="@+id/buying2"
+                    android:layout_margin="10dp"
+                    android:layout_width="180dp"
+                    android:layout_height="115dp"
+                    android:text="아파트"
+                    android:textAlignment="viewStart"
+                    android:textSize="25sp"
+                    android:textColor="#000000"
+                    android:background="@drawable/button"/>
+
+                <android.widget.Button
+                    android:id="@+id/buying3"
+                    android:layout_margin="10dp"
+                    android:layout_width="180dp"
+                    android:layout_height="115dp"
+                    android:text="상가"
+                    android:textAlignment="viewStart"
+                    android:textSize="25sp"
+                    android:textColor="#000000"
+                    android:background="@drawable/button"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.widget.Button
+            android:id="@+id/selling1"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:text="방 내놓기"
+            android:textSize="25sp"
+            android:textAlignment="viewStart"
+            android:textColor="#000000"
+            android:background="@drawable/button"/>
+
+
+    </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
