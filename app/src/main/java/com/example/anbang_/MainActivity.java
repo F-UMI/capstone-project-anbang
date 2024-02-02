@@ -15,47 +15,47 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton profile1 = findViewById(R.id.profile1);
+        ImageButton profile1 = findViewById(R.id.profile_button);
         profile1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                Intent intent = new Intent(getApplicationContext(), UserProfileActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button buying1 = (Button) findViewById(R.id.buying1);
+        Button buying1 = (Button) findViewById(R.id.buying_oneroom_button);
         buying1.setOnClickListener(new View.OnClickListener(){
         @Override
             public void onClick(View view){
-            Intent intent = new Intent(getApplicationContext(), Buying1Activity.class);
+            Intent intent = new Intent(getApplicationContext(), BuyingOneRoomActivity.class);
             startActivity(intent);
         }
         });
 
-        Button buying2 = (Button) findViewById(R.id.buying2);
+        Button buying2 = (Button) findViewById(R.id.buying_apt_button);
         buying2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), Buying2Activity.class);
+                Intent intent = new Intent(getApplicationContext(), BuyingAptActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button buying3 = (Button) findViewById(R.id.buying3);
+        Button buying3 = (Button) findViewById(R.id.buying_store_button);
         buying3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), Buying3Activity.class);
+                Intent intent = new Intent(getApplicationContext(), BuyingStoreActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button selling1 = (Button) findViewById(R.id.selling1);
+        Button selling1 = (Button) findViewById(R.id.sell_property);
         selling1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), RegistrationActivity.class);
+                Intent intent = new Intent(getApplicationContext(), PropertyRegistrationActivity.class);
                 startActivity(intent);
             }
         });

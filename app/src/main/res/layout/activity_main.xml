@@ -33,7 +33,7 @@
 
 
             <ImageButton
-                android:id="@+id/profile1"
+                android:id="@+id/profile_button"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
@@ -55,7 +55,7 @@
             android:layout_weight="1"/>
 
             <androidx.appcompat.widget.SearchView
-                android:id="@+id/search1"
+                android:id="@+id/search_bar"
                 android:layout_width="300dp"
                 android:layout_height="80dp"
                 android:padding="20dp"
@@ -72,7 +72,7 @@
 
 
             <android.widget.Button
-                android:id="@+id/buying1"
+                android:id="@+id/buying_oneroom_button"
                 android:layout_width="180dp"
                 android:layout_height="250dp"
                 android:layout_margin="10dp"
@@ -88,7 +88,7 @@
                 android:layout_height="match_parent">
 
                 <android.widget.Button
-                    android:id="@+id/buying2"
+                    android:id="@+id/buying_apt_button"
                     android:layout_margin="10dp"
                     android:layout_width="180dp"
                     android:layout_height="115dp"
@@ -99,7 +99,7 @@
                     android:background="@drawable/button"/>
 
                 <android.widget.Button
-                    android:id="@+id/buying3"
+                    android:id="@+id/buying_store_button"
                     android:layout_margin="10dp"
                     android:layout_width="180dp"
                     android:layout_height="115dp"
@@ -114,7 +114,7 @@
         </LinearLayout>
 
         <android.widget.Button
-            android:id="@+id/selling1"
+            android:id="@+id/sell_property"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="140dp"

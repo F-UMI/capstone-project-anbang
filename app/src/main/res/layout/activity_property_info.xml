@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Info1Activity">
+    tools:context=".PropertyInfoActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -29,7 +29,7 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/info_img"
+            android:id="@+id/property_info_img"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:src="@drawable/house"
@@ -49,7 +49,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/info_name1"
+                android:id="@+id/property_info_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="매물이름"
@@ -57,7 +57,7 @@
                 android:textColor="#000000"
                 android:textStyle="bold"/>
             <TextView
-                android:id="@+id/location1"
+                android:id="@+id/property_info_location"
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -227,7 +227,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/profile_img1"
+                android:id="@+id/seller_profile_img"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:background="@color/white"
@@ -236,7 +236,7 @@
                 android:src="@drawable/profileimg"/>
 
             <TextView
-                android:id="@+id/profile_name1"
+                android:id="@+id/seller_profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="매도자 프로필"

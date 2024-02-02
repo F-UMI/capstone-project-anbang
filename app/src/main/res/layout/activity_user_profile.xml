@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".UserProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -188,7 +188,7 @@
                 android:textStyle="bold"/>
 
                 <ListView
-                    android:id="@+id/current_list"
+                    android:id="@+id/profile_current_transaction"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"/>
 
@@ -213,7 +213,7 @@
                 android:textStyle="bold"/>
 
             <ListView
-                android:id="@+id/past_list"
+                android:id="@+id/profile_past_transaction"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"/>
 

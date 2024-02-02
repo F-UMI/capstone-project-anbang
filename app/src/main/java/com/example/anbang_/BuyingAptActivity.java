@@ -10,12 +10,12 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-public class Buying2Activity extends AppCompatActivity {
+public class BuyingAptActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buying2);
+        setContentView(R.layout.activity_buying_apt);
 
 //        listView = (ListView) findViewById(R.id.listview2);
 //        adapter = new ListviewAdapter();

@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class ProfileActivity extends AppCompatActivity {
+public class UserProfileActivity extends AppCompatActivity {
 
     ListView listView;
     ListviewAdapter2 adapter;
@@ -17,9 +17,9 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_user_profile);
 
-        listView = (ListView) findViewById(R.id.current_list);
+        listView = (ListView) findViewById(R.id.profile_current_transaction);
         adapter = new ListviewAdapter2();
 
         adapter.addItem(ContextCompat.getDrawable(this,R.drawable.house),"매물1");
@@ -31,12 +31,12 @@ public class ProfileActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long I) {
                 ListviewItem listviewItem = (ListviewItem)adapterView.getItemAtPosition(i);
-                Intent intent = new Intent(getApplicationContext(), Info1Activity.class);
+                Intent intent = new Intent(getApplicationContext(), PropertyInfoActivity.class);
                 startActivity(intent);
             }
         });
 
-        listView = (ListView) findViewById(R.id.past_list);
+        listView = (ListView) findViewById(R.id.profile_past_transaction);
         adapter = new ListviewAdapter2();
 
         adapter.addItem(ContextCompat.getDrawable(this,R.drawable.house),"매물1");
@@ -48,7 +48,7 @@ public class ProfileActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long I) {
                 ListviewItem listviewItem = (ListviewItem)adapterView.getItemAtPosition(i);
-                Intent intent = new Intent(getApplicationContext(), Info1Activity.class);
+                Intent intent = new Intent(getApplicationContext(), PropertyInfoActivity.class);
                 startActivity(intent);
             }
         });

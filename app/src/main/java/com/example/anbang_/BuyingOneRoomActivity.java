@@ -10,14 +10,14 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-public class Buying1Activity extends AppCompatActivity {
+public class BuyingOneRoomActivity extends AppCompatActivity {
     ListView listView;
     ListviewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buying1);
+        setContentView(R.layout.activity_buying_one_room);
 
         listView = (ListView) findViewById(R.id.listview);
         adapter = new ListviewAdapter();
@@ -34,7 +34,7 @@ public class Buying1Activity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long I) {
                 ListviewItem listviewItem = (ListviewItem)adapterView.getItemAtPosition(i);
-                Intent intent = new Intent(getApplicationContext(), Info1Activity.class);
+                Intent intent = new Intent(getApplicationContext(), PropertyInfoActivity.class);
                 startActivity(intent);
             }
         });
