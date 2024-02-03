@@ -22,12 +22,12 @@ public class ListviewAdapter2 extends BaseAdapter {
         return arrayList.size();
     }
     @Override
-    public Object getItem(int i) {
-        return arrayList.get(i);
+    public Object getItem(int item) {
+        return arrayList.get(item);
     }
     @Override
-    public long getItemId(int i) {
-        return i;
+    public long getItemId(int id) {
+        return id;
     }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {

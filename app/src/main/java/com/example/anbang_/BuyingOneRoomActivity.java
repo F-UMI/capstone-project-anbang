@@ -31,12 +31,10 @@ public class BuyingOneRoomActivity extends AppCompatActivity {
         adapter.addItem(ContextCompat.getDrawable(this,R.drawable.house),"매물7");
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long I) {
-                ListviewItem listviewItem = (ListviewItem)adapterView.getItemAtPosition(i);
-                Intent intent = new Intent(getApplicationContext(), PropertyInfoActivity.class);
-                startActivity(intent);
-            }
+        listView.setOnItemClickListener((adapterView, view, i, I) -> {
+            ListviewItem listviewItem = (ListviewItem)adapterView.getItemAtPosition(i);
+            Intent intent = new Intent(getApplicationContext(), PropertyInfoActivity.class);
+            startActivity(intent);
         });
 /*
 
