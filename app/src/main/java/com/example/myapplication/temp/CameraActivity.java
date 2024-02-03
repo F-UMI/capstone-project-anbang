@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.temp;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -24,6 +24,8 @@ import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.example.myapplication.BuildConfig;
+import com.example.myapplication.R;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 

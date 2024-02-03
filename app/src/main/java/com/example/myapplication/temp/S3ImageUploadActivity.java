@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.temp;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -23,6 +23,8 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.example.myapplication.BuildConfig;
+import com.example.myapplication.R;
 
 import java.io.File;
 import java.util.ArrayList;

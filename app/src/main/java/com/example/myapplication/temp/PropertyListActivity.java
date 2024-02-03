@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.temp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.R;
 import com.example.myapplication.database.PropertyDB;
 import com.example.myapplication.dto.PropertyDto;
 

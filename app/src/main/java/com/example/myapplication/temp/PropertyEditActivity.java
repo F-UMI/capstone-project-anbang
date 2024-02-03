@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.temp;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -7,6 +7,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.R;
 import com.example.myapplication.database.PropertyDB;
 import com.example.myapplication.dto.PropertyDto;
 

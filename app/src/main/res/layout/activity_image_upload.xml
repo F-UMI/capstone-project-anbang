@@ -7,7 +7,7 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    tools:context=".S3ImageUploadActivity">
+    tools:context=".temp.S3ImageUploadActivity">
 
     <ImageView
         android:id="@+id/selectedImageView"

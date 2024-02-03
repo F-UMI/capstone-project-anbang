@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.temp;
 
 
 import android.content.Intent;
@@ -15,6 +15,8 @@ import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
+import com.example.myapplication.BuildConfig;
+import com.example.myapplication.R;
 import com.example.myapplication.database.PropertyDB;
 import com.example.myapplication.dto.PropertyDto;
 

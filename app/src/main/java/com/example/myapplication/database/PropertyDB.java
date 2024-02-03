@@ -7,11 +7,11 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import com.example.myapplication.LocalDateTimeConverter;
+import com.example.myapplication.temp.LocalDateTimeConverter;
 import com.example.myapplication.dao.PropertyDao;
 import com.example.myapplication.dto.PropertyDto;
 
-@Database(entities = {PropertyDto.class}, version = 1)
+@Database(entities = {PropertyDto.class}, version = 2)
 @TypeConverters({LocalDateTimeConverter.class})
 public abstract class PropertyDB extends RoomDatabase {
     public abstract PropertyDao propertyDao();
