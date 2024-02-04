@@ -33,7 +33,7 @@
             android:name=".datePickerMainActivity"
             android:exported="false" />
         <activity
-            android:name=".temp.S3ImageUploadActivity"
+            android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.anbang_"
             tools:targetApi="33">
@@ -61,7 +61,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".temp.S3ImageUploadActivity" />
         <activity android:name=".BuyingOneRoomActivity" />
         <!--        <activity android:name=".temp.CameraActivity" />-->
         <activity android:name=".temp.PropertyListActivity" />
