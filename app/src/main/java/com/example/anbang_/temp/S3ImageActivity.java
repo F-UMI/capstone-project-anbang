@@ -1,3 +1,4 @@
+/*
 package com.example.anbang_.temp;
 
 import android.os.AsyncTask;
@@ -69,4 +70,4 @@ public class S3ImageActivity extends AppCompatActivity {
             recyclerView.setAdapter(photoAdapter);
         }
     }
-}
+}*/

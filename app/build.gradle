@@ -18,9 +18,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "ACCESS_KEY", properties['access.key']
-        buildConfigField "String", "SECRET_ACCESS_KEY", properties['secret.access.key']
-        buildConfigField "String", "BUCKET_NAME", properties['bucket.name']
+//        buildConfigField "String", "ACCESS_KEY", properties['access.key']
+//        buildConfigField "String", "SECRET_ACCESS_KEY", properties['secret.access.key']
+//        buildConfigField "String", "BUCKET_NAME", properties['bucket.name']
     }
 
 

@@ -1,3 +1,4 @@
+/*
 package com.example.anbang_.temp;
 
 import android.content.Intent;
@@ -61,3 +62,4 @@ public class PropertyListActivity extends AppCompatActivity {
         super.onDestroy();
     }
 }
+*/

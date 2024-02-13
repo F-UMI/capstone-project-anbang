@@ -1,3 +1,4 @@
+/*
 package com.example.anbang_.temp;
 
 import android.os.Bundle;
@@ -38,7 +39,9 @@ public class PropertyEditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_property_edit);
         propertyDB = PropertyDB.getInstance(this);
         propertyDtoList = propertyDB.propertyDao().getAll();
-/*//
+*/
+/*//*
+/
         propertyAdapter = new PropertyAdapter(this, propertyDtoList);
 
         editBoardTitle = findViewById(R.id.editBoardTitle);
@@ -161,6 +164,8 @@ public class PropertyEditActivity extends AppCompatActivity {
     public Bitmap byteArrayToBitmap(byte[] byteArray) {
         Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         return bitmap;
-    }*/
+    }*//*
+
     }
 }
+*/

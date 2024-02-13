@@ -1,3 +1,4 @@
+/*
 package com.example.anbang_.temp;
 
 
@@ -88,7 +89,8 @@ public class PropertyViewActivity extends AppCompatActivity {
 
 
 }
-       /* propertyDB = PropertyDB.getInstance(this);
+       */
+/* propertyDB = PropertyDB.getInstance(this);
         propertyDtoList = propertyDB.propertyDao().getAll();
         propertyAdapter = new PropertyAdapter(this, propertyDtoList);
 
@@ -98,8 +100,12 @@ public class PropertyViewActivity extends AppCompatActivity {
         viewDate = findViewById(R.id.editBoardPassword);
         viewText = findViewById(R.id.editBoardText);
         imageView = findViewById(R.id.editBoardImage);
-*//*        updateBtn = findViewById(R.id.updateBtn);
+*//*
+*/
+/*        updateBtn = findViewById(R.id.updateBtn);
         deleteBtn = findViewById(R.id.deleteBtn);*//*
+*/
+/*
 
         Intent intent = getIntent();
 
@@ -117,13 +123,17 @@ public class PropertyViewActivity extends AppCompatActivity {
         }
 
 
-*//*        updateBtn.setOnClickListener(e -> {
+*//*
+*/
+/*        updateBtn.setOnClickListener(e -> {
             showPasswordInputDialog("update");
         });
 
         deleteBtn.setOnClickListener(e -> {
             showPasswordInputDialog("delete");
         });*//*
+*/
+/*
         Log.e("viewID", boardId + "");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
@@ -148,7 +158,9 @@ public class PropertyViewActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-*//*    private void showPasswordInputDialog(String query) {
+*//*
+*/
+/*    private void showPasswordInputDialog(String query) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Enter Password");
 
@@ -178,9 +190,13 @@ public class PropertyViewActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }*//*
+*/
+/*
 
     private void boardUpdate() {
-*//*        Intent updateIntent = new Intent(PropertyViewActivity.this, BoardEditActivity.class);
+*//*
+*/
+/*        Intent updateIntent = new Intent(PropertyViewActivity.this, BoardEditActivity.class);
         updateIntent.putExtra("id", propertyDtoList.get(position).getId());
         updateIntent.putExtra("title", propertyDtoList.get(position).getTitle());
         updateIntent.putExtra("userName", propertyDtoList.get(position).getUserName());
@@ -192,6 +208,8 @@ public class PropertyViewActivity extends AppCompatActivity {
         startActivity(updateIntent);
         showToast("비밀번호 인증 완료");
         finish();*//*
+*/
+/*
     }
 
     private void boardDelete() {
@@ -211,3 +229,4 @@ public class PropertyViewActivity extends AppCompatActivity {
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }*/
+

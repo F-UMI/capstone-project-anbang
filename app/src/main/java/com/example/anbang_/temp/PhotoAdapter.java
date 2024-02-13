@@ -1,3 +1,4 @@
+/*
 package com.example.anbang_.temp;
 
 import android.content.Context;
@@ -50,4 +51,4 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
             imageView = itemView.findViewById(R.id.imageView);
         }
     }
-}
+}*/

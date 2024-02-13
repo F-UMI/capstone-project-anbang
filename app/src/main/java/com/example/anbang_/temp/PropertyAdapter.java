@@ -1,3 +1,4 @@
+/*
 package com.example.anbang_.temp;
 
 
@@ -86,4 +87,4 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Holder
 
     }
 
-}
+}*/

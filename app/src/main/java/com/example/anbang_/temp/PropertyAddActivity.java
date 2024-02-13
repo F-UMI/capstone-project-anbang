@@ -1,3 +1,4 @@
+/*
 package com.example.anbang_.temp;
 
 
@@ -53,12 +54,14 @@ public class PropertyAddActivity extends AppCompatActivity {
     private EditText maintenanceCost;
     private String availableMoveInDate;
 
-    /*
+    */
+/*
     *         this.propertyId = propertyId;
         this.propertyName = propertyName;
         this.bargainerName = bargainerName;
         this.listingCreationDate = listingCreationDate;
-    * */
+    * *//*
+
     private Button btnGetImage;
 
     private static final int REQUEST_PERMISSION_CODE = 123;
@@ -267,4 +270,4 @@ public class PropertyAddActivity extends AppCompatActivity {
         }
         return null;
     }
-}
+}*/

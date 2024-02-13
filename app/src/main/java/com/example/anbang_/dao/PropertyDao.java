@@ -1,3 +1,4 @@
+/*
 package com.example.anbang_.dao;
 
 import androidx.room.Dao;
@@ -30,3 +31,4 @@ public interface PropertyDao {
 }
 
 
+*/

@@ -1,3 +1,4 @@
+/*
 package com.example.anbang_.dto;
 
 import androidx.room.ColumnInfo;
@@ -188,3 +189,4 @@ public class PropertyDto {
     }
 }
 
+*/

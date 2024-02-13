@@ -1,3 +1,4 @@
+/*
 package com.example.anbang_.temp;
 
 import android.content.ContentResolver;
@@ -66,9 +67,11 @@ public class S3ImageUploadActivity extends AppCompatActivity {
         String bucketName = BuildConfig.BUCKET_NAME;
     }
 
+*/
 /*    private void checkPermissionAndOpenGallery() {
             openGallery();
-    }*/
+    }*//*
+
 
     private void openGallery() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -166,4 +169,4 @@ public class S3ImageUploadActivity extends AppCompatActivity {
         }
         return null;
     }
-}
+}*/

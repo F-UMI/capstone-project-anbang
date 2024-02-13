@@ -1,3 +1,4 @@
+/*
 package com.example.anbang_.database;
 
 import android.content.Context;
@@ -38,3 +39,4 @@ public abstract class PropertyDB extends RoomDatabase {
 
 
 
+*/

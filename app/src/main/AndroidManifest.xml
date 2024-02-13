@@ -61,13 +61,13 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-        <activity android:name=".temp.S3ImageUploadActivity" />
+<!--        <activity android:name=".temp.S3ImageUploadActivity" />-->
         <activity android:name=".BuyingOneRoomActivity" />
         <!--        <activity android:name=".temp.CameraActivity" />-->
-        <activity android:name=".temp.PropertyListActivity" />
+<!--        <activity android:name=".temp.PropertyListActivity" />
         <activity android:name=".temp.PropertyAddActivity" />
         <activity android:name=".temp.PropertyViewActivity" />
-        <activity android:name=".temp.S3ImageActivity" />
+        <activity android:name=".temp.S3ImageActivity" />-->
 
         <service
             android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
