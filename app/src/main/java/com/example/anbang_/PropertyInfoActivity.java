@@ -20,6 +20,10 @@ public class PropertyInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_property_info);
 
         TextView location1 = (TextView) findViewById(R.id.property_info_location);
+        TextView sellerProfileNameTextView = findViewById(R.id.seller_profile_name);
+
+        String sellerProfileName = sellerProfileNameTextView.getText().toString();
+
         String text= "부동산 위치";
         location1.setText(text);
 
@@ -37,6 +41,7 @@ public class PropertyInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), UserProfileActivity.class);
+                intent.putExtra("USER_ID", sellerProfileName);
                 startActivity(intent);
             }
         });
