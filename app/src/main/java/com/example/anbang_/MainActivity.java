@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        String myId = getIntent().getStringExtra("USER_ID");
+
         ImageButton profile1 = findViewById(R.id.profile_button);
         profile1.setOnClickListener(new View.OnClickListener() {
             @Override
