@@ -239,7 +239,7 @@
                 android:id="@+id/seller_profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="매도자 프로필"
+                android:text="id"
                 android:textSize="20sp"/>
 
 
