@@ -13,6 +13,7 @@
     │    ├── cryptogen
     │    └── peer
     ├── channel
+    │    ├── channel-artifacts
     │    ├── CC.sh
     │    └── GC.sh
     ├── config
@@ -28,9 +29,10 @@
 3. ./GC.sh configtxgens 실행
 4. docker-compose file이 있는 artifacts 폴더로 이동 cd ../
 5. docker-compose up -d 실행
-6. ./CC.sh createChannel 실행
-7. ./CC.sh joinChannel 실행
-8. ./CC.sh updateAnchorPeers 실행
+6. 실행 스크립트가 있는 디렉토리로 이동 cd channel
+7. ./CC.sh createChannel 실행
+8. ./CC.sh joinChannel 실행
+9. ./CC.sh updateAnchorPeers 실행
 
 
 
