@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), PropertyRegistrationActivity.class);
+                intent.putExtra("USER_ID", myId);
                 startActivity(intent);
             }
         });

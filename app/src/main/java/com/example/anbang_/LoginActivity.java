@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         private String inputId;
 
         @Override
-        protected Boolean doInBackground(String... params) {
+        protected Boolean doInBackground(String... params) { // couchdb에서 사용자 정보 조회
             this.inputId = params[0];
             try {
                 URL url = new URL("http://10.0.2.2:5984/anbangtest/" + params[0]); // CouchDB에서 사용자 정보 조회
@@ -130,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(Boolean result) {
+        protected void onPostExecute(Boolean result) { // 로그인 성공/실패 여부
             if (result) {
                 // 로그인 성공
                 Toast.makeText(LoginActivity.this, "로그인 성공!", Toast.LENGTH_SHORT).show();

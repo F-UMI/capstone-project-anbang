@@ -147,7 +147,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
                 // TextView에 정보를 표시
                 userId.setText(id);
-                userBirth.setText(birth);
+                userBirth.setText(id);
                 userPhone.setText(phone);
                 userName.setText(name);
                 userRegistrationDate.setText(registerDate);

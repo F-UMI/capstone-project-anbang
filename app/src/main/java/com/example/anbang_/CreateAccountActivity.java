@@ -17,6 +17,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
@@ -30,6 +33,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
+
 
         account_id = findViewById(R.id.account_id);
         account_password = findViewById(R.id.account_password);
@@ -49,11 +53,15 @@ public class CreateAccountActivity extends AppCompatActivity {
             new SaveUserTask().execute(userID, userPassword, userName, userPhone, userBirth);
         });
     }
+    private String getCurrentDate() { // 입주가능일 가져오는 함수
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        return sdf.format(new Date());
+    }
 
-    private class SaveUserTask extends AsyncTask<String, Void, Integer> {
+    private class SaveUserTask extends AsyncTask<String, Void, Integer> { // 사용자 정보 저장
 
         @Override
-        protected Integer doInBackground(String... params) {
+        protected Integer doInBackground(String... params) { // 회원가입시 입력한 사용자 정보 저장
             try {
                 URL url = new URL("http://10.0.2.2:5984/anbangtest"); // CouchDB URL
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -61,8 +69,12 @@ public class CreateAccountActivity extends AppCompatActivity {
                 conn.setRequestProperty("Content-Type", "application/json");
 
                 // 사용자 정보 생성
-                String userJson = "{ \"_id\":\"" + params[0] + "\", \"password\":\"" + params[1] + "\", \"name\":\"" + params[2] + "\", \"phonenumber\":\"" + params[3] + "\", \"birth\":\"" + params[4] + "\" }";
-                // 사용자 인증 정보 추가 (예: Basic 인증)
+                String registrationDate = getCurrentDate();
+
+                String userJson = "{ \"_id\":\"" + params[0] + "\", \"password\":\"" + params[1] +
+                        "\", \"name\":\"" + params[2] + "\", \"phonenumber\":\"" + params[3] +
+                        "\", \"birth\":\"" + params[4] + "\", \"registrationDate\":\"" + registrationDate + "\" }";// 사용자 인증 정보 추가 (예: Basic 인증)
+// 사용자 인증 정보 추가 (예: Basic 인증)
                 String credentials = "admin:admin"; // 여기에 실제 CouchDB 사용자 이름과 비밀번호를 넣어야 합니다.
                 String base64Credentials = Base64.encodeToString(credentials.getBytes(), Base64.DEFAULT);
                 conn.setRequestProperty("Authorization", "Basic " + base64Credentials);
@@ -79,6 +91,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                 String name = account_name.getText().toString();
                 String phone = account_phone.getText().toString();
                 String birth = account_birth.getText().toString();
+
 
                 if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password) || TextUtils.isEmpty(name) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(birth)) {
                     // 하나라도 입력되지 않았을 때 Toast 메시지 출력
@@ -98,7 +111,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(Integer responseCode) {
+        protected void onPostExecute(Integer responseCode) { // 회원가입 성공/실패 여부
             if (responseCode != null) {
                 if (responseCode == HttpURLConnection.HTTP_CREATED) {
                     // 데이터가 성공적으로 CouchDB에 저장됨

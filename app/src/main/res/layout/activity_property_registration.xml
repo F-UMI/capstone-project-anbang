@@ -369,7 +369,7 @@
                 android:orientation="horizontal">
 
                 <DatePicker
-                    android:id="@+id/vDatePicker"
+                    android:id="@+id/DatePicker"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
