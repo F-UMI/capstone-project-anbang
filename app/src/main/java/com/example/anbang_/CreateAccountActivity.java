@@ -7,8 +7,10 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +36,10 @@ public class CreateAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
+        Spinner accountBankSpinner = (Spinner) findViewById(R.id.account_number_bank);
+        ArrayAdapter accountBankAdapter = ArrayAdapter.createFromResource(this,R.array.account_bank, android.R.layout.simple_spinner_item);
+        accountBankAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        accountBankSpinner.setAdapter(accountBankAdapter);
 
         account_id = findViewById(R.id.account_id);
         account_password = findViewById(R.id.account_password);
@@ -48,11 +54,17 @@ public class CreateAccountActivity extends AppCompatActivity {
             String userName = account_name.getText().toString();
             String userPhone = account_phone.getText().toString();
             String userBirth = account_birth.getText().toString();
+            Spinner getAccountBank = findViewById(R.id.account_number_bank);
+            EditText getAccountNumber = findViewById(R.id.account_number);
+
+            String accountBank = getAccountBank.getSelectedItem().toString();
+            String accountNumber = getAccountNumber.getText().toString();
 
             // AsyncTask를 사용하여 CouchDB에 데이터 저장
-            new SaveUserTask().execute(userID, userPassword, userName, userPhone, userBirth);
+            new SaveUserTask().execute(userID, userPassword, userName, userPhone, userBirth, accountBank, accountNumber);
         });
     }
+
     private String getCurrentDate() { // 입주가능일 가져오는 함수
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         return sdf.format(new Date());
@@ -73,8 +85,8 @@ public class CreateAccountActivity extends AppCompatActivity {
 
                 String userJson = "{ \"_id\":\"" + params[0] + "\", \"password\":\"" + params[1] +
                         "\", \"name\":\"" + params[2] + "\", \"phonenumber\":\"" + params[3] +
-                        "\", \"birth\":\"" + params[4] + "\", \"registrationDate\":\"" + registrationDate + "\" }";// 사용자 인증 정보 추가 (예: Basic 인증)
-// 사용자 인증 정보 추가 (예: Basic 인증)
+                        "\", \"birth\":\"" + params[4] + "\", \"registrationDate\":\"" + registrationDate +
+                        "\", \"accountBank\":\"" + params[5] + "\", \"accountNumber\":\"" + params[6] + "\" }";
                 String credentials = "admin:admin"; // 여기에 실제 CouchDB 사용자 이름과 비밀번호를 넣어야 합니다.
                 String base64Credentials = Base64.encodeToString(credentials.getBytes(), Base64.DEFAULT);
                 conn.setRequestProperty("Authorization", "Basic " + base64Credentials);

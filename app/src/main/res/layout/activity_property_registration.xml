@@ -27,6 +27,40 @@
 
     </LinearLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:text="매물 정보"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="매물 이름"/>
+
+            <EditText
+                android:id="@+id/property_name"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:inputType="text"
+                android:hint="매물 이름"/>
+
+        </LinearLayout>
+
+
+
 
         <TextView
             android:layout_width="wrap_content"

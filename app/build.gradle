@@ -23,6 +23,10 @@ android {
 //        buildConfigField "String", "BUCKET_NAME", properties['bucket.name']
     }
 
+    dataBinding {
+        enabled = true
+    }
+
 
     buildTypes {
         release {

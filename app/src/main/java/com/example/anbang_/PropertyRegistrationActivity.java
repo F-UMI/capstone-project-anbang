@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -67,6 +68,7 @@ public class PropertyRegistrationActivity extends AppCompatActivity {
     }
     private void onClickPropertyRegistration() {
         // 매물 정보 수집
+        String propertyName = getPropertyName();
         String category = getCategory();
         String address = getAddress();
         String size = getSize();
@@ -80,7 +82,15 @@ public class PropertyRegistrationActivity extends AppCompatActivity {
 
 
         // 여기에서 CouchDB에 저장하는 AsyncTask를 실행
-        new SavePropertyTask().execute(category, address, size, roomcount, monthyear,price,managepay,moveindate,aboutproperty,owner).execute();
+        new SavePropertyTask().execute(propertyName, category, address, size, roomcount, monthyear,price,managepay,moveindate,aboutproperty,owner).execute();
+    }
+
+    private String getPropertyName() {
+        EditText propertyNameEditText = findViewById(R.id.property_name);
+
+        String propertyName = propertyNameEditText.getText().toString();
+
+        return propertyName;
     }
 
     private String getCategory() {
@@ -167,6 +177,7 @@ public class PropertyRegistrationActivity extends AppCompatActivity {
         return "상세 정보 : " + aboutproperty;
     }
 
+
     private class SavePropertyTask extends AsyncTask<String, Void, Integer> {
 
         @Override
@@ -179,10 +190,10 @@ public class PropertyRegistrationActivity extends AppCompatActivity {
                 conn.setRequestProperty("Content-Type", "application/json");
 
                 // 사용자 정보 생성
-                String userJson = "{ \"category\":\"" + params[0] + "\", \"address\":\"" + params[1] +
-                        "\", \"size\":\"" + params[2] + "\", \"roomcount\":\"" + params[3] +
-                        "\", \"monthyear\":\"" + params[4] + "\", \"price\":\"" + params[5] + "\", \"managepay\":\"" + params[6] +
-                        "\", \"moveindate\":\"" + params[7] + "\", \"aboutproperty\":\"" + params[8] + "\", \"owner\":\"" + params[9] + "\"}";
+                String userJson = "{ \"_id\":\"" + params[0] + "\", \"category\":\"" + params[1] + "\", \"address\":\"" + params[2] +
+                        "\", \"size\":\"" + params[3] + "\", \"roomcount\":\"" + params[4] + "\", \"monthyear\":\"" + params[5] +
+                        "\", \"price\":\"" + params[6] + "\", \"managepay\":\"" + params[7] + "\", \"moveindate\":\"" + params[8] +
+                        "\", \"aboutproperty\":\"" + params[9] + "\", \"owner\":\"" + params[10] + "\"}";
 
 
 // 사용자 인증 정보 추가 (예: Basic 인증)
@@ -234,5 +245,3 @@ public class PropertyRegistrationActivity extends AppCompatActivity {
         }
     }
 }
-
-
