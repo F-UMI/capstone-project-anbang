@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.util.Linkify;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -45,5 +48,24 @@ public class PropertyInfoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        FloatingActionButton BuyProperty = findViewById(R.id.fab_buy);
+        BuyProperty.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), BuyingPropertyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+/*        TextView SellerProfileNum = findViewById(R.id.seller_profile_num);
+        SellerProfileNum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), UserModifyActivity.class);
+                startActivity(intent);
+            }
+
+        });*/
     }
 }

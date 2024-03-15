@@ -24,6 +24,24 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="33">
         <activity
+            android:name=".BuyingPropertyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MySalesManageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MySoldListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyPurchaseListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserModifyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserProfileActivity"
             android:exported="false" />
         <activity
@@ -60,20 +78,17 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
-<!--        <activity android:name=".temp.S3ImageUploadActivity" />-->
-        <activity android:name=".BuyingOneRoomActivity" />
-        <!--        <activity android:name=".temp.CameraActivity" />-->
-<!--        <activity android:name=".temp.PropertyListActivity" />
+            android:exported="true" /> <!-- <activity android:name=".temp.S3ImageUploadActivity" /> -->
+        <activity android:name=".BuyingOneRoomActivity" /> <!-- <activity android:name=".temp.CameraActivity" /> -->
+        <!--
+        <activity android:name=".temp.PropertyListActivity" />
         <activity android:name=".temp.PropertyAddActivity" />
         <activity android:name=".temp.PropertyViewActivity" />
-        <activity android:name=".temp.S3ImageActivity" />-->
-
+        <activity android:name=".temp.S3ImageActivity" />
+        -->
         <service
             android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
             android:enabled="true" />
-
     </application>
-
 
 </manifest>
