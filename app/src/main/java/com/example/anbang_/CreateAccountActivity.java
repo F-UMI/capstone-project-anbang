@@ -1,14 +1,17 @@
 package com.example.anbang_;
 
 import android.content.Intent;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +33,22 @@ public class CreateAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
+
+        Button btn_login = (Button) findViewById(R.id.btn_login2);
+        btn_login.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //계좌
+        Spinner accountBankSpinner = (Spinner) findViewById(R.id.account_number_bank);
+        ArrayAdapter accountBankAdapter = ArrayAdapter.createFromResource(this,R.array.account_bank, android.R.layout.simple_spinner_item);
+        accountBankAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        accountBankSpinner.setAdapter(accountBankAdapter);
+
 
         account_id = findViewById(R.id.account_id);
         account_password = findViewById(R.id.account_password);
@@ -120,6 +139,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                 Toast.makeText(CreateAccountActivity.this, "모든 항목을 입력해주세요.", Toast.LENGTH_SHORT).show();
             }
         }
+
 
     }
 }

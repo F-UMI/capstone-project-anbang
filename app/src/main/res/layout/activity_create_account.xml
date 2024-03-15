@@ -125,6 +125,27 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/account_number_bank"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/account_number"
+                    android:layout_width="170dp"
+                    android:layout_height="50dp"
+                    android:hint="계좌번호"
+                    android:inputType="number"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
