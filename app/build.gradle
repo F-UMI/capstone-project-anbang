@@ -32,28 +32,28 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     buildFeatures {
         viewBinding true
-    }
-
-    buildFeatures {
         buildConfig = true
     }
 
     packagingOptions {
         resources.excludes.add("META-INF/*")
     }
+
+    lintOptions {
+        disable 'GoogleAppIndexingWarning', 'HardcodedText', 'InvalidPackage'
+        textReport true
+        textOutput "stdout"
+    }
 }
 
-
-
 dependencies {
-    //grpc 관련 dependencies
-    implementation 'com.google.protobuf:protobuf-javalite:3.25.1'
+    // You need to build grpc-java to obtain these libraries below.
     implementation 'io.grpc:grpc-okhttp:1.62.2'
     implementation 'io.grpc:grpc-protobuf-lite:1.62.2'
     implementation 'io.grpc:grpc-stub:1.62.2'
