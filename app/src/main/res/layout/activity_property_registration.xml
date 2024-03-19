@@ -8,24 +8,24 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="#66008C">
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:background="#66008C">
+            android:layout_weight="2"
+            android:text="매물 등록"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="매물 등록"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
+    </LinearLayout>
 
 
         <TextView
@@ -78,29 +78,29 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <RadioGroup
-                    android:id="@+id/property_type"
+            <RadioGroup
+                android:id="@+id/property_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/type_oneroom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:text="주택/빌라"/>
+                <RadioButton
+                    android:id="@+id/type_apart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아파트"/>
+                <RadioButton
+                    android:id="@+id/type_mall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오피스텔"/>
 
-                    <RadioButton
-                        android:id="@+id/type_oneroom"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="주택/빌라"/>
-                    <RadioButton
-                        android:id="@+id/type_apart"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="아파트"/>
-                    <RadioButton
-                        android:id="@+id/type_mall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="오피스텔"/>
-
-                </RadioGroup>
+            </RadioGroup>
 
                 <View
                     android:layout_width="wrap_content"
@@ -151,51 +151,51 @@
 
         </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="매물 주소"/>
+
+        <EditText
+            android:id="@+id/property_address"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:textSize="15sp"
+            android:inputType="text"
+            android:hint="주소"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="매물 주소"/>
+            android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/property_address"
-                android:layout_width="250dp"
+                android:id="@+id/address_building"
+                android:layout_width="125dp"
                 android:layout_height="50dp"
                 android:textSize="15sp"
-                android:inputType="text"
-                android:hint="주소"/>
+                android:inputType="number"
+                android:hint="동"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/address_building"
-                    android:layout_width="125dp"
-                    android:layout_height="50dp"
-                    android:textSize="15sp"
-                    android:inputType="number"
-                    android:hint="동"/>
-
-                <EditText
-                    android:id="@+id/address_room"
-                    android:layout_width="125dp"
-                    android:layout_height="50dp"
-                    android:textSize="15sp"
-                    android:inputType="number"
-                    android:hint="호"/>
-
-            </LinearLayout>
+            <EditText
+                android:id="@+id/address_room"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:inputType="number"
+                android:hint="호"/>
 
         </LinearLayout>
+
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

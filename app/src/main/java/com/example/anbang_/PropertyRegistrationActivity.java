@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.Spinner;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONException;
@@ -35,7 +36,6 @@ import java.util.Locale;
 public class PropertyRegistrationActivity extends AppCompatActivity {
 
     private DatePicker datePicker;
-
     private RadioGroup property_type;
     private EditText property_address;
     private EditText address_building;
@@ -70,7 +70,6 @@ public class PropertyRegistrationActivity extends AppCompatActivity {
         Button photo_registration = findViewById(R.id.photo_registration);
         Button property_registration = findViewById(R.id.property_registration);
         property_registration.setOnClickListener(view -> {
-
         });
 
 
@@ -232,6 +231,7 @@ public class PropertyRegistrationActivity extends AppCompatActivity {
         EditText aboutpropertyEditText = findViewById(R.id.property_detail);
 
         String aboutproperty = aboutpropertyEditText.getText().toString();
+
 
         return "상세 정보 : " + aboutproperty;
     }

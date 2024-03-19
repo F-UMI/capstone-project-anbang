@@ -1,6 +1,7 @@
 package com.example.anbang_;
 
 import android.content.Intent;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -51,7 +52,6 @@ public class CreateAccountActivity extends AppCompatActivity {
         ArrayAdapter accountBankAdapter = ArrayAdapter.createFromResource(this,R.array.account_bank, android.R.layout.simple_spinner_item);
         accountBankAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         accountBankSpinner.setAdapter(accountBankAdapter);
-
         account_id = findViewById(R.id.account_id);
         account_password = findViewById(R.id.account_password);
         account_name = findViewById(R.id.account_name);
@@ -156,6 +156,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                 Toast.makeText(CreateAccountActivity.this, "모든 항목을 입력해주세요.", Toast.LENGTH_SHORT).show();
             }
         }
+
 
     }
 }

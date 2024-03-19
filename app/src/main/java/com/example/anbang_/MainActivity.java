@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 //                Intent intent = new Intent(getApplicationContext(), UserProfileActivity.class);
                 Intent intent = new Intent(getApplicationContext(), MyPageActivity.class);
                 intent.putExtra("USER_ID", myId);
+
                 startActivity(intent);
             }
         });
