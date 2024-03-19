@@ -89,14 +89,15 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/category"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="유형: "
                     android:textSize="15sp"
                     android:layout_marginTop="5dp"
                     android:textColor="#000000"/>
 
                 <TextView
+                    android:id="@+id/address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="주소: "
@@ -105,6 +106,7 @@
                     android:textColor="#000000"/>
 
                 <TextView
+                    android:id="@+id/size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="크기(평/제곱미터): "
@@ -113,6 +115,7 @@
                     android:textColor="#000000"/>
 
                 <TextView
+                    android:id="@+id/roomcount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="방 개수: "
@@ -149,6 +152,7 @@
             android:orientation="vertical">
 
         <TextView
+            android:id="@+id/monthyear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="월세/전세: "
@@ -157,6 +161,7 @@
             android:textColor="#000000"/>
 
             <TextView
+                android:id="@+id/managepay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="관리비: "
@@ -193,6 +198,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/moveindate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="입주 가능 일자: "
@@ -201,6 +207,7 @@
                     android:textColor="#000000"/>
 
                 <TextView
+                    android:id="@+id/aboutproperty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="상세 정보: "

@@ -5,21 +5,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        String myId = getIntent().getStringExtra("USER_ID");
+
         ImageButton profile1 = findViewById(R.id.profile_button);
         profile1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(), UserProfileActivity.class);
                 Intent intent = new Intent(getApplicationContext(), MyPageActivity.class);
+                intent.putExtra("USER_ID", myId);
+
                 startActivity(intent);
             }
         });
@@ -56,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), PropertyRegistrationActivity.class);
+                intent.putExtra("USER_ID", myId);
                 startActivity(intent);
             }
         });

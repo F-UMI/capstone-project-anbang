@@ -56,4 +56,10 @@ public class ListviewAdapter2 extends BaseAdapter {
 
         arrayList.add(listviewItem);
     }
+
+    public void clear() {
+        arrayList.clear();
+        notifyDataSetChanged();
+    }
+
 }
