@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         profile1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), UserProfileActivity.class);
+//                Intent intent = new Intent(getApplicationContext(), UserProfileActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MyPageActivity.class);
                 intent.putExtra("USER_ID", myId);
                 startActivity(intent);
             }

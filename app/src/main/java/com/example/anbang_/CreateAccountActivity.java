@@ -36,6 +36,17 @@ public class CreateAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
+        Button btn_login = (Button) findViewById(R.id.btn_login2);
+        btn_login.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //계좌
+
         Spinner accountBankSpinner = (Spinner) findViewById(R.id.account_number_bank);
         ArrayAdapter accountBankAdapter = ArrayAdapter.createFromResource(this,R.array.account_bank, android.R.layout.simple_spinner_item);
         accountBankAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
