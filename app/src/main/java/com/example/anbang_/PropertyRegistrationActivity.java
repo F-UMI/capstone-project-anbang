@@ -54,7 +54,53 @@ public class PropertyRegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_property_registration);
 
-        datePicker = findViewById(R.id.DatePicker);
+        property_type = findViewById(R.id.property_type);
+        property_address = findViewById(R.id.property_address);
+        address_building = findViewById(R.id.address_building);
+        address_room = findViewById(R.id.address_room);
+        pyeong = findViewById(R.id.pyeong);
+        squaremeter = findViewById(R.id.squaremeter);
+        num_of_room = findViewById(R.id.num_of_room);
+        transaction_info = findViewById(R.id.transaction_info);
+        price = findViewById(R.id.price);
+        maintenance_cost_presence = findViewById(R.id.maintenance_cost_presence);
+        maintenance_cost = findViewById(R.id.maintenance_cost);
+        DatePicker vDatePicker = findViewById(R.id.vDatePicker);
+        property_detail = findViewById(R.id.property_detail);
+        Button photo_registration = findViewById(R.id.photo_registration);
+        Button property_registration = findViewById(R.id.property_registration);
+        property_registration.setOnClickListener(view -> {
+
+        });
+
+
+        //라디오버튼 열고닫기
+        RadioGroup rgprotype = findViewById(R.id.property_type);
+        RadioButton rboneroom = findViewById(R.id.type_oneroom);
+        RadioGroup rgprotypedetail = findViewById(R.id.property_type_detail);
+
+
+        rgprotype.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                if (rboneroom.isChecked()){
+                    rgprotypedetail.setVisibility(View.VISIBLE);
+                } else {
+                    rgprotypedetail.setVisibility(View.INVISIBLE);
+                }
+
+            }
+        });
+
+        //등록 버튼
+        property_registration.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Toast.makeText(getApplicationContext(),"등록 완료", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        datePicker = findViewById(R.id.vDatePicker);
         Button propertyRegistrationButton = findViewById(R.id.property_registration);
         propertyRegistrationButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -238,52 +284,6 @@ public class PropertyRegistrationActivity extends AppCompatActivity {
             if (responseCode != null) {
                 if (responseCode == HttpURLConnection.HTTP_CREATED) {
                     // 데이터가 성공적으로 CouchDB에 저장됨
-
-                    property_type = findViewById(R.id.property_type);
-                    property_address = findViewById(R.id.property_address);
-                    address_building = findViewById(R.id.address_building);
-                    address_room = findViewById(R.id.address_room);
-                    pyeong = findViewById(R.id.pyeong);
-                    squaremeter = findViewById(R.id.squaremeter);
-                    num_of_room = findViewById(R.id.num_of_room);
-                    transaction_info = findViewById(R.id.transaction_info);
-                    price = findViewById(R.id.price);
-                    maintenance_cost_presence = findViewById(R.id.maintenance_cost_presence);
-                    maintenance_cost = findViewById(R.id.maintenance_cost);
-                    DatePicker vDatePicker = findViewById(R.id.vDatePicker);
-                    property_detail = findViewById(R.id.property_detail);
-                    Button photo_registration = findViewById(R.id.photo_registration);
-                    Button property_registration = findViewById(R.id.property_registration);
-                    property_registration.setOnClickListener(view -> {
-
-                    });
-
-
-                    //라디오버튼 열고닫기
-                    RadioGroup rgprotype = findViewById(R.id.property_type);
-                    RadioButton rboneroom = findViewById(R.id.type_oneroom);
-                    RadioGroup rgprotypedetail = findViewById(R.id.property_type_detail);
-
-
-                    rgprotype.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-                            if (rboneroom.isChecked()){
-                                rgprotypedetail.setVisibility(View.VISIBLE);
-                            } else {
-                                rgprotypedetail.setVisibility(View.INVISIBLE);
-                            }
-
-                        }
-                    });
-
-                    //등록 버튼
-                    property_registration.setOnClickListener(new View.OnClickListener(){
-                        @Override
-                        public void onClick(View view){
-                            Toast.makeText(getApplicationContext(),"등록 완료", Toast.LENGTH_SHORT).show();
-                        }
-                    });
 
 
                     Toast.makeText(PropertyRegistrationActivity.this, "매물 등록 성공!", Toast.LENGTH_SHORT).show();
