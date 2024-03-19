@@ -33,7 +33,6 @@ public class PropertyInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_property_info);
 
-        name = findViewById(R.id.property_info_name);
         owner = findViewById(R.id.seller_profile_name);
         roomname = findViewById(R.id.property_info_name);
         category = findViewById(R.id.category);
@@ -79,7 +78,7 @@ public class PropertyInfoActivity extends AppCompatActivity {
         @Override
         protected JSONObject doInBackground(String... params) { // CouchDB에서 사용자 정보 조회
             try {
-                URL url = new URL("http://10.0.2.2:5984/property/7942c79a2c1a6b854243fd31ce001dea"); // CouchDB에서 사용자 정보 조회
+                URL url = new URL("http://10.0.2.2:5984/property/qwer"); // CouchDB에서 사용자 정보 조회
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("GET");
 
@@ -133,9 +132,8 @@ public class PropertyInfoActivity extends AppCompatActivity {
 
 
                 // 각 필드의 값을 가져옴
-                String getpropertyname = userJsonObject.optString("_id", "N/A");
                 String getowner = userJsonObject.optString("owner", "N/A");
-                String getname = userJsonObject.optString("name", "N/A");
+                String getname = userJsonObject.optString("_id", "N/A");
                 String getcategory = userJsonObject.optString("category", "N/A");
                 String getaddress = userJsonObject.optString("address", "N/A");
                 String getsize = userJsonObject.optString("size", "N/A");
@@ -146,7 +144,6 @@ public class PropertyInfoActivity extends AppCompatActivity {
                 String getaboutproperty = userJsonObject.optString("aboutproperty", "N/A");
 
                 // TextView에 정보를 표시
-                name.setText(getpropertyname);
                 owner.setText(getowner);
                 roomname.setText(getname);
                 category.setText(getcategory);
