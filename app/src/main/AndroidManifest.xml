@@ -10,8 +10,6 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="34" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
-
-
     <application
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -52,7 +50,7 @@
             android:name=".datePickerMainActivity"
             android:exported="false" />
         <activity
-            android:name=".BuyingPropertyActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.anbang_"
             tools:targetApi="33">
@@ -78,9 +76,11 @@
             android:name=".PropertyInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true" /> <!-- <activity android:name=".temp.S3ImageUploadActivity" /> -->
-        <activity android:name=".BuyingOneRoomActivity" /> <!-- <activity android:name=".temp.CameraActivity" /> -->
+            android:name=".BuyingPropertyActivity"
+            android:exported="true" />
+        <activity android:name=".BuyingOneRoomActivity" />
+        <!-- <activity android:name=".temp.CameraActivity" /> -->
+        <activity android:name=".temp.S3ImageUploadActivity" />
         <!--
         <activity android:name=".temp.PropertyListActivity" />
         <activity android:name=".temp.PropertyAddActivity" />

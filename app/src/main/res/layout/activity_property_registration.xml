@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -502,8 +503,16 @@
                 android:textSize="15sp"
                 android:text="매물 사진"/>
 
+            <ImageView
+                android:id="@+id/property_photo"
+                android:layout_width="127dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                app:srcCompat="@drawable/ic_launcher_background" />
+
             <android.widget.Button
-                android:id="@+id/photo_registration"
+                android:id="@+id/photo_registration_btn"
                 android:layout_width="130dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="3dp"
@@ -537,7 +546,7 @@
 
 
         <android.widget.Button
-            android:id="@+id/property_registration"
+            android:id="@+id/property_registration_btn"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
